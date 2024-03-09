@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="{% static 'myapp/styles.css' %}">
+    </head>
+    <body>
+        <p>Enter Username and Password:</p>
+        <form action="{% url 'myapp:add' %}" method="post">
+            {% csrf_token %}
+            {{ form }}
+            
+            <input type="submit">
+        </form>
+        <a href="{% url 'myapp:default' %}"> View Names </a>
+    </body>
+</html>

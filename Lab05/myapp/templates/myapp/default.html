@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="{% static 'myapp/styles.css' %}">
+    </head>
+    <body>
+        <p>
+            Names:
+        </p>
+        <ul>
+            {% for name in listOfNames %} <!-- for security reasons i passed the names list only and kept the passwords hidden in the 'Person' object-->
+                <li>{{ name }}</li>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'myapp:add' %}">Add User</a>
+    </body>
+</html>
